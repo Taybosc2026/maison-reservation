@@ -1,0 +1,308 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --line: #dbe4ef;
+  --text: #1d2a39;
+  --muted: #5d6b7a;
+  --primary: #1f5eff;
+  --primary-dark: #1848c5;
+  --success: #e9f8ef;
+  --success-text: #166534;
+  --error: #fff1f2;
+  --error-text: #b42318;
+  --warning: #fff7e6;
+  --warning-text: #8a5a00;
+  --occupied: #253246;
+  --free: #eaf9ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 14px;
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+button.secondary {
+  background: white;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+button.secondary:hover {
+  background: #f8fbff;
+}
+
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.center-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(31, 44, 67, 0.05);
+}
+
+.login-card {
+  width: min(100%, 420px);
+  padding: 28px;
+}
+
+.topbar {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.topbar h1,
+.login-card h1,
+.section-head h2,
+.sidebar-card h2 {
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.9rem;
+}
+
+.notice,
+.message {
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+}
+
+.notice {
+  background: var(--warning);
+  color: var(--warning-text);
+}
+
+.message.success {
+  background: var(--success);
+  color: var(--success-text);
+}
+
+.message.error {
+  background: var(--error);
+  color: var(--error-text);
+}
+
+.stack {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.8rem 0.9rem;
+  background: white;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.form-card {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 20px;
+  align-items: start;
+}
+
+.planning-card,
+.sidebar-card {
+  padding: 20px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.planning-wrap {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.planning-grid {
+  display: grid;
+  min-width: 900px;
+}
+
+.heading {
+  font-weight: 700;
+}
+
+.day-cell,
+.day-slot,
+.room-cell {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-bottom: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  text-align: center;
+}
+
+.room-cell {
+  justify-content: flex-start;
+  padding-left: 12px;
+  border-left: 0;
+  background: white;
+}
+
+.sticky-cell {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+
+.day-slot.free {
+  background: var(--free);
+}
+
+.day-slot.occupied {
+  background: var(--occupied);
+  color: white;
+}
+
+.day-slot span {
+  font-size: 10px;
+  line-height: 1.15;
+}
+
+.reservation-list {
+  display: grid;
+  gap: 12px;
+}
+
+.reservation-item {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: #eef3ff;
+  color: #26428b;
+  font-size: 0.9rem;
+}
+
+.danger-link {
+  background: transparent;
+  color: #b42318;
+  padding: 0;
+  text-align: left;
+}
+
+.danger-link:hover {
+  background: transparent;
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 16px;
+  }
+
+  .topbar,
+  .section-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
