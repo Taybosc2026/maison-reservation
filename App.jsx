@@ -9,10 +9,10 @@ const hasSupabase = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)
 const supabase = hasSupabase ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null
 
 const rooms = [
-  'Chambre Nicolas (Jardin)',
-  'Chambre Anna (Potager)',
-  'Chambre Lina (Etage)',
-  'Chambre Brune (Rdc)',
+  'Chambre Nicolas',
+  'Chambre Anna',
+  'Chambre Lina',
+  'Chambre Brune',
 ]
 
 const monthNames = [
